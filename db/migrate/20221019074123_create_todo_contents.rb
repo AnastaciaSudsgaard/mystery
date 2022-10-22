@@ -1,0 +1,14 @@
+class CreateTodoContents < ActiveRecord::Migration[6.1]
+  def change
+    create_table :todo_contents do |t|
+      t.text :description
+      t.boolean :completed
+      t.datetime :completed_at
+      t.references :todo_list, null: false, foreign_key: true
+      t.references :user, null: false, foreign_key: true
+      t.references :room, null: false, foreign_key: true
+
+      t.timestamps
+    end
+  end
+end

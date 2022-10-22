@@ -1,0 +1,35 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Description:</b>
+  <%= @todo_inside.description %>
+</p>
+
+<p>
+  <b>Completed:</b>
+  <%= @todo_inside.completed %>
+</p>
+
+<p>
+  <b>Completed at:</b>
+  <%= @todo_inside.completed_at %>
+</p>
+
+<p>
+  <b>Todo list:</b>
+  <%= @todo_inside.todo_list %>
+</p>
+
+<p>
+  <b>User:</b>
+  <%= @todo_inside.user %>
+</p>
+
+<p>
+  <b>Book:</b>
+  <%= @todo_inside.book %>
+</p>
+
+
+<%= link_to 'Edit', edit_todo_list_todo_inside_path(@todo_inside.todo_list, @todo_inside) %> |
+<%= link_to 'Back', todo_list_todo_insides_path(@todo_inside.todo_list) %>

@@ -1,0 +1,33 @@
+<div class="container-fluid">
+  <div class="row">
+    <div class="col-3">
+      <small>Logged in as</small><br>
+          <b><%= current_user.username %><br></b>
+      <%= render 'form', book: Book.new %>
+      <hr>
+      <% @books.each do |book| %>
+        <%= link_to book do%>
+          <div class="card mb-2">
+            <div class="card-body">
+              <%= book.name %>
+              <td><%= link_to 'Destroy', book, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+            </div>
+          </div>
+        <% end %>
+      <% end %>
+    </div>
+    <div class="col-9">
+      <% if @book.present? %>
+        <div class="chat-room">
+          <p><%= @book.name %></p>
+          <% @book.todo_lists.each do |todo_list| %>
+              <p><%= todo_list.title %></p>
+            <% end %>
+          <div class="chat-box">
+            <%= render 'todo_lists/form', todo_list: TodoList.new, book:@book %>
+          </div>
+        </div>
+      <% end %>
+    </div>
+  </div>
+</div>

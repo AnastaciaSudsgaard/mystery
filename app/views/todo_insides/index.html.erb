@@ -1,0 +1,33 @@
+<h1>Listing todo_insides</h1>
+
+<table>
+  <tr>
+    <th>Description</th>
+    <th>Completed</th>
+    <th>Completed at</th>
+    <th>Todo list</th>
+    <th>User</th>
+    <th>Book</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @todo_insides.each do |todo_inside| %>
+  <tr>
+    <td><%= todo_inside.description %></td>
+    <td><%= todo_inside.completed %></td>
+    <td><%= todo_inside.completed_at %></td>
+    <td><%= todo_inside.todo_list %></td>
+    <td><%= todo_inside.user %></td>
+    <td><%= todo_inside.book %></td>
+    <td><%= link_to 'Show', [todo_inside.todo_list, todo_inside] %></td>
+    <td><%= link_to 'Edit', edit_todo_list_todo_inside_path(todo_inside.todo_list, todo_inside) %></td>
+    <td><%= link_to 'Destroy', [todo_inside.todo_list, todo_inside], method: :delete, data: { confirm: 'Are you sure?' } %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Todo inside', new_todo_list_todo_inside_path(params[:todo_list_id]) %>
