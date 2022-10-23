@@ -1,4 +1,11 @@
 Rails.application.routes.draw do
+  devise_for :login_users
+  resources :time_lists do
+    resources :time_items
+  end
+  namespace :time_list do
+    resources :time_items
+  end
   resources :messages
   resources :rooms
   resources :todo_lists do

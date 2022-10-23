@@ -1,0 +1,25 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Description:</b>
+  <%= @time_item.description %>
+</p>
+
+<p>
+  <b>Completed:</b>
+  <%= @time_item.completed %>
+</p>
+
+<p>
+  <b>Completed at:</b>
+  <%= @time_item.completed_at %>
+</p>
+
+<p>
+  <b>Time list:</b>
+  <%= @time_item.time_list %>
+</p>
+
+
+<%= link_to 'Edit', edit_time_list_time_item_path(@time_item.time_list, @time_item) %> |
+<%= link_to 'Back', time_list_time_items_path(@time_item.time_list) %>

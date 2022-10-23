@@ -10,12 +10,26 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2022_10_21_063702) do
+ActiveRecord::Schema.define(version: 2022_10_23_025724) do
 
   create_table "books", force: :cascade do |t|
     t.string "name"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+  end
+
+  create_table "login_users", force: :cascade do |t|
+    t.string "email", default: "", null: false
+    t.string "encrypted_password", default: "", null: false
+    t.string "reset_password_token"
+    t.datetime "reset_password_sent_at"
+    t.datetime "remember_created_at"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.string "name"
+    t.text "profile"
+    t.index ["email"], name: "index_login_users_on_email", unique: true
+    t.index ["reset_password_token"], name: "index_login_users_on_reset_password_token", unique: true
   end
 
   create_table "messages", force: :cascade do |t|
@@ -30,6 +44,22 @@ ActiveRecord::Schema.define(version: 2022_10_21_063702) do
 
   create_table "rooms", force: :cascade do |t|
     t.string "name"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
+
+  create_table "time_items", force: :cascade do |t|
+    t.text "description"
+    t.boolean "completed"
+    t.datetime "completed_at"
+    t.integer "time_list_id", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["time_list_id"], name: "index_time_items_on_time_list_id"
+  end
+
+  create_table "time_lists", force: :cascade do |t|
+    t.string "title"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end
@@ -100,6 +130,7 @@ ActiveRecord::Schema.define(version: 2022_10_21_063702) do
 
   add_foreign_key "messages", "rooms"
   add_foreign_key "messages", "users"
+  add_foreign_key "time_items", "time_lists"
   add_foreign_key "todo_contents", "rooms"
   add_foreign_key "todo_contents", "todo_lists"
   add_foreign_key "todo_contents", "users"

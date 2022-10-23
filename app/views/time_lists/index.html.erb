@@ -1,0 +1,18 @@
+<div class="card-header d-flex justify-content-between">
+<span>
+Time Lists
+</span>
+<%= link_to 'New Time List', new_time_list_path, class: 'btn btn-primary btn-sm' %>
+</div>
+
+<ul class='list-group'>
+<% @time_lists.each do |time_list|%>
+<li class='list-group-item'>
+<td><%= link_to time_list.title, time_list %></td><br>
+<td><%= link_to 'Destroy', time_list, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </li>
+      </tr>
+<% end %>
+</ul>
+
+

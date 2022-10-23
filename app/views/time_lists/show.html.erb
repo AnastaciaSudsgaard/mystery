@@ -1,0 +1,27 @@
+<div class="card-header d-flex justify-content-between">
+<span>
+<%= @time_list.title %>
+</span>
+<%= link_to 'Edit', edit_time_list_path(@time_list), class: 'btn btn-secondary btn-sm' %>
+</div>
+
+
+<%= form_with(model: [@time_list, @time_item]) do |f| %>
+<div class= "card-add-form">
+<%= f.text_field :description, :size=>45, placeholder: 'Add item' %>
+<%= f.submit "Add", class:"btn btn-primary btn-sm" %>
+</div>
+</div
+
+<% end %>
+
+
+<ul class='list-group'>
+<% @time_list.time_items.each do |time_item|%>
+<li class='list-group-item'>
+<td><%= time_item.description%></td><br>
+
+      </li>
+      </tr>
+<% end %>
+</ul>
