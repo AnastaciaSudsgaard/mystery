@@ -1,8 +1,12 @@
 <div class="container-fluid">
   <div class="row">
     <div class="col-3">
+    <%= button_to 'ログアウト', destroy_login_user_session_path, method: :delete %>
+    <% if login_user_signed_in? %>
+  <%= link_to "マイページへ", login_user_path(current_login_user.id) %>
+<% end %>
       <small>Logged in as</small><br>
-          <b><%= current_user.username %><br></b>
+          <b><%= current_login_user.name %><br></b>
       <%= render 'form', book: Book.new %>
       <hr>
       <% @books.each do |book| %>

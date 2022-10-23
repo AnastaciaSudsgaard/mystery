@@ -1,5 +1,5 @@
 <div id="room-id" data-room-id="<%= @room.try(:id) %>"></div>
-<div id="user-id" data-user-id="<%= current_user.id %>"></div>
+<div id="login_user-id" data-login_user-id="<%= current_user.id %>"></div>
 
 <div class="container-fluid">
   <div class="row">
@@ -7,7 +7,7 @@
       <div class="card no-outline">
         <div class="card-body">
           <small>Logged in as</small><br>
-          <b><%= current_user.username %><br></b>
+          <b><%= current_user.name %><br></b>
           
         </div>
       </div>

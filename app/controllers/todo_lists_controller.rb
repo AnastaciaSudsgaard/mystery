@@ -23,7 +23,7 @@ class TodoListsController < ApplicationController
   # POST /todo_lists or /todo_lists.json
   def create
     @todo_list = TodoList.new(todo_list_params)
-    @todo_list.user = current_user
+    @todo_list.user_id = current_login_user.id
     @todo_list.save
     redirect_to request.referrer
     

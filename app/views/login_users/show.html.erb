@@ -1,0 +1,9 @@
+<h1>login_users#show</h1>
+<p>名前 : <%= @login_user.name %></p>
+<p>メールアドレス : <%= @login_user.email %></p>
+<p>プロフィール : <%= @login_user.profile %></p>
+
+<% if current_login_user.id == @login_user.id %>
+  <%= link_to "編集する", edit_login_user_registration_path %>
+<% end %>
+

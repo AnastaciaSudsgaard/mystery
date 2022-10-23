@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
   devise_for :login_users
+  resources :login_users, only: [:show]
   resources :time_lists do
     resources :time_items
   end

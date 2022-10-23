@@ -1,6 +1,6 @@
 class TodoList < ApplicationRecord
   has_many :todo_insides
-  belongs_to :user
+  belongs_to :login_user
   belongs_to :book
   
   def completed_items
