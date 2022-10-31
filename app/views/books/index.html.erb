@@ -1,26 +1,44 @@
+
+
+
+
+
 <div class="container-fluid">
-  <div class="row">
-    <div class="col-3">
+  <div >
     <%= button_to 'ログアウト', destroy_login_user_session_path, method: :delete %>
-    <% if login_user_signed_in? %>
-  <%= link_to "マイページへ", login_user_path(current_login_user.id) %>
-<% end %>
-      <small>Logged in as</small><br>
-          <b><%= current_login_user.name %><br></b>
-      <%= render 'form', book: Book.new %>
-      <hr>
-      <% @books.each do |book| %>
-        <%= link_to book do%>
-          <div class="card mb-2">
-            <div class="card-body">
-              <%= book.name %>
-              <td><%= link_to 'Destroy', book, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-            </div>
-          </div>
-        <% end %>
-      <% end %>
-    </div>
-    <div class="col-9">
+      <% if login_user_signed_in? %>
+        <%= button_to "マイページへ", login_user_path(current_login_user.id) %>
+      <% end %><br>
+        <small>Logged in as</small><br>
+        <b><%= current_login_user.name %><br></b>
+          <%= render 'form', book: Book.new %>
+            <hr>
+              <div class="box">
+                <% @books.each do |book| %>
+                  <div>
+                    <div class="slide-img">
+                      <%= image_tag book.image_url if book.image? %>
+                      <div class="overlay">
+                        <div class="description">
+                          <%= link_to book do%>
+                            <p><%= book.name %></p>
+                            <%= link_to 'Destroy', book, method: :delete, data: { confirm: 'Are you sure?' } %>
+                          <% end %>
+                        </div>
+                      </div>
+                    </div>
+                  </div> 
+                <% end %>   
+              </div>
+                  
+
+                  
+            
+      
+
+
+
+    <div class=>
       <% if @book.present? %>
         <div class="chat-room">
           <p><%= @book.name %></p>
@@ -33,5 +51,14 @@
         </div>
       <% end %>
     </div>
-  </div>
+  
 </div>
+
+
+
+
+
+    
+
+        
+  

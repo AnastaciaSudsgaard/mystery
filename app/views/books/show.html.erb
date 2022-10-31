@@ -4,6 +4,12 @@
   <strong>Name:</strong>
   <%= @book.name %>
 </p>
+<% if @book.image.attached? %>
+<p>
+  <strong>Image:</strong>
+  <%= image_tag @book.image%>
+</p>
+<% end %>
 
 <%= link_to 'Edit', edit_book_path(@book) %> |
 <%= link_to 'Back', books_path %>

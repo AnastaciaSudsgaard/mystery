@@ -10,7 +10,8 @@
       </ul>
     </div>
   <% end %>
-<%= form.hidden_field :room_id, value: room.id %>
+<%= form.text_field :room_id%>
+<%= form.text_field :login_user_id %>
   <div class="input-group">
     <%= form.text_field :content, placeholder: "type here", class: 'form-control' %>
     <div class="input-group-append">

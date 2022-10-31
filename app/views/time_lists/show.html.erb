@@ -15,13 +15,18 @@
 
 <% end %>
 
+<ul id='tasks-list'>
+<li>
+
+
 
 <ul class='list-group'>
 <% @time_list.time_items.each do |time_item|%>
 <li class='list-group-item'>
 <td><%= time_item.description%></td><br>
-
-      </li>
-      </tr>
+</li>
+</tr>
+</li>
 <% end %>
+</ul>
 </ul>
