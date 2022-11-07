@@ -28,7 +28,7 @@ class MessagesController < ApplicationController
     @message = Message.new(message_params)
     @message.login_user_id = current_login_user.id
     
-    if @message.save
+    if @message.save!
     redirect_to :action=>"index"
     else
       redirect_to :action=>"new"

@@ -143,12 +143,12 @@ ActiveRecord::Schema.define(version: 2022_10_31_160427) do
 
   create_table "todo_lists", force: :cascade do |t|
     t.string "title"
-    t.integer "user_id", null: false
+    t.integer "login_user_id", null: false
     t.integer "book_id", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.index ["book_id"], name: "index_todo_lists_on_book_id"
-    t.index ["user_id"], name: "index_todo_lists_on_user_id"
+    t.index ["login_user_id"], name: "index_todo_lists_on_login_user_id"
   end
 
   create_table "users", force: :cascade do |t|
@@ -171,5 +171,5 @@ ActiveRecord::Schema.define(version: 2022_10_31_160427) do
   add_foreign_key "todo_insides", "users"
   add_foreign_key "todo_items", "todo_lists"
   add_foreign_key "todo_lists", "books"
-  add_foreign_key "todo_lists", "users"
+  add_foreign_key "todo_lists", "login_users"
 end

@@ -1,18 +1,21 @@
 <!DOCTYPE html>
 <html>
 
-<header class="header">
 <div class="row justify-content-center">
     <nav>
         <ul>
-          <li>Home</li>
-          <li>Home</li>
-          <li>Home</li>
-          <li>Home</li>
+          <li><a href="#page-top">Home</a></li>
+          <li><%=link_to "Log out",destroy_login_user_session_path, method: :delete%> </li>
+          <li>
+              <% if login_user_signed_in? %>
+                  <%= link_to "My page", login_user_path(current_login_user.id) %>
+              <% end %><br>
+          </li>
+          <li><a href="#library">My library</a></li>
         </ul>
     </nav>
 </div>
-</header> 
+
 
   <head>
     <title>Mystery</title>
@@ -29,12 +32,12 @@
   <body class='bg-light'> 
 <div class="container">
   <div class="row">
-    <div class="col-md-10 col-lg-30 offset-md-2 offset-lg-2">
+    
       <p id="notice"><%= notice %></p>
       <div class="card">
         <%= yield %>
       </div>
-    </div>
+    
   </div>
 </div>
 
