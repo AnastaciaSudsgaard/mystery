@@ -1,70 +1,84 @@
+<head>
+<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<script src="https://code.jquery.com/jquery-3.4.1.js"></script>
+</head>
 
 
-<body id="page-top">
-        <!-- Navigation-->
-        <!-- Header-->
-        <section class="masthead d-flex align-items-center">
-            <div class="text text-center">
-              <img class="img-fluid" src="assets/img/washing.jpg" alt="..." />
-            </div>
-        </section>
-        <!-- About-->
-        <section class="content-section bg-light" id="about">
-            <div class="container px-4 px-lg-5 text-center">
-                <div class="row gx-4 gx-lg-5 justify-content-center">
-                    <div class="col-lg-10">
-                        <br>
-                        <h2>How to use:</h2>
-                        <p class="lead mb-5">
-                            Agatha Christie's books are all fun to read. However, they can be hard to follow with all the information. Especially for the people
-                            who want to follow along and solve the mystery themselves, it is a necessary to have some sort of memos.
-                            So, this site was created to make it easy to keep your meomes so you can focus on reading, rather than keeping trace of all of your memos.
-                            There are even functions to help you see which memos are more important and functions that make it easier to see who is suspected more!
-                        </p>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-
-<div class="container-fluid"id="library">
-  <div >
-        <small>Logged in as</small><br>
-        
-          <%= render 'form', book: Book.new %>
-            <hr>
-              <div class="box">
+<body>
+<div class="bg-hand" id="books">     
+  <div class="row">
+    <div class="col-9">       
+      <div class="container-fluid"id="library">     
+          <div class="pic-frame"> 
+            <%= render 'form', book: Book.new %> 
+          </div>
+            <div>
+              <hr>
+              <div class="shelf">
                 <% @books.each do |book| %>
                   <div>
                     <div class="slide-img">
-                    <%= link_to book do%>
-                      <%= image_tag book.image_url if book.image? %>
+                      <%= link_to book do%>
+                        <%= image_tag book.image_url if book.image? %>
                       <% end %>
                     </div>
                   </div> 
                 <% end %>   
               </div>
-                  
-
-                  
-            
-      
-
-
-
-    <div class=>
-      <% if @book.present? %>
-        <div class="chat-room">
-          <p><%= @book.name %></p>
-          <%= link_to '✕', @book, method: :delete, data: { confirm: 'Are you sure?' } %></div>
-          <% @book.todo_lists.each do |todo_list| %>
-              <p><%= todo_list.title %></p>
-            <% end %>
-          <div class="chat-box">
-            <%= render 'todo_lists/form', todo_list: TodoList.new, book:@book %>
-          </div>
+            </div>
         </div>
-      <% end %>
-    </div>
-  
+      </div>
+        
+
+
+
+<br>
+<div class="col-3">
+<div class="hands">
+  <%=image_tag 'img/handstransparant.png'%>
 </div>
+    <div>
+      <% if @book.present? %>
+        <div class="chat-room">        
+            <% @book.todo_lists.each do |todo_list| %>
+              <li class="list-group-item">
+              <%= link_to todo_list.title, todo_list %>
+                  <%= link_to todo_list, method: :delete, data: { confirm: 'Are you sure?' }, class: 'btn btn-sm btn-light' do%>
+                    <i class="fa fa-trash-o" aria-hidden="true"></i>
+                  <% end %>
+                
+              </li>
+            <% end%>
+
+        <div class="chat-box">
+          <%= render 'todo_lists/form', todo_list: TodoList.new, book:@book %>
+        </div>
+      
+      <% end %>
+      </div>
+
+
+    
+    </div>
+
+</div>
+</div>
+</div>
+</div>
+
+<script>
+  $('#upload_costum').change(function(event){
+    let twopath=URL.createObjectURL(event.target.files[0])
+    $('.image > img').fadeIn('fast').attr('src,twopath')
+    $('.delete_file').show():
+    $('.choose_file').hiden():
+
+    $('.delete_file').click(function(){
+      $('.image > img').fadeIn('fast').attr('src',)
+      $('.delete_file').hiden():
+
+    })
+  })
+</script>
+
+</body>

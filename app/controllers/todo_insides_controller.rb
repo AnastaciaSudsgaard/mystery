@@ -23,6 +23,8 @@ class TodoInsidesController < ApplicationController
   # POST todo_lists/1/todo_insides
   def create
     @todo_inside = @todo_list.todo_insides.build(todo_inside_params)
+    @todo_inside.login_user_id = current_login_user.id
+
 
     if @todo_inside.save
       redirect_to(@todo_inside.todo_list)
@@ -59,6 +61,6 @@ class TodoInsidesController < ApplicationController
 
     # Only allow a trusted parameter "white list" through.
     def todo_inside_params
-      params.require(:todo_inside).permit(:description, :completed, :completed_at, :todo_list_id, :user_id, :book_id)
+      params.require(:todo_inside).permit(:description, :completed, :completed_at, :todo_list_id, :login_user_id, :book_id)
     end
 end

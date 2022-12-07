@@ -2,6 +2,7 @@ class TodoList < ApplicationRecord
   has_many :todo_insides
   belongs_to :login_user
   belongs_to :book
+  has_rich_text :description
   
   def completed_items
     @completed_items ||=todo_insides.completed.count

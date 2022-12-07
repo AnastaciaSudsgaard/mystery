@@ -1,0 +1,466 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, or any plugin's
+ * vendor/assets/stylesheets directory can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+ * compiled file so the styles you add here take precedence over styles defined in any other CSS/SCSS
+ * files in this directory. Styles in this file should be added after the last require_* statement.
+ * It is generally better to create a new file per style scope.
+ *
+ *= require_tree .
+ *= require_self
+ */
+
+ *{
+    margin: 0;
+    padding: 0;
+    text-decoration: none;
+    box-sizing: border-box;
+ }
+
+
+
+        nav{
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            height: 690px;
+            left: 0;
+            background: #fff;
+            width: 50px;
+            overflow: hidden;
+            transition: width 0.2s linear;
+            z-index: 100;
+            a:hover{
+                background: #eee;
+            }
+            a{
+                position: relative;
+                color: rgb(120, 118, 118);
+                font-size: 14px;
+                display: table;
+                width: 300px;
+                padding: 10px;
+                
+            }
+        }
+        .logo{
+            text-align: center;
+            display: flex;
+            transition: all 0.5s ease;
+            margin: 10px 0 0 10px;
+        }
+        .logo span{
+            font-weight: bold;
+            padding-left: 15px;
+            font-size: 18px;
+            text-transform: uppercase;
+        }
+        
+        .fas{
+            position: relative;
+            width: 60px;
+            height: 40px;
+            top: 14px;
+            
+            font-size: 20px;
+            
+        }
+        .nav-item{
+            position: relative;
+            top: 12px;
+            margin-left: 5px;
+            font-size: 15px;
+        }
+
+        nav:hover{
+            width: 280px;
+            transition: all 0.5s ease;
+        }
+        .logout{
+            position: absolute;
+            bottom: 0;
+        }
+        
+        .logoutsign{
+            .btn{
+                width: 200px;
+                text-align: left;
+            }
+            .btn:hover{
+                color: white;
+            }
+        }
+        .logoutsign:hover{
+            background: #eee;
+        }
+    
+
+
+
+body {
+    ::-webkit-scrollbar {
+        display: none;
+    }  
+    }
+
+
+    .badge{
+    text-align: end;
+    }
+
+    .chat-name{
+        background-color: #007bff;
+        color: white;
+        height: 50px;
+    }
+
+    .chat-room {
+    max-height: 230px;
+    
+    width: 434px;
+    position: absolute;
+    left: 590px;
+    top: 191px;
+    overflow-x: hidden; 
+    
+
+    .list-group-item{
+        display: flex;
+        
+        height: 46px;
+       
+       
+        .btn{
+            width: 30px;
+            height: 30px;
+            margin-left: auto;
+        }
+    }
+    
+
+    
+
+
+    
+    #messages {
+        height: 100%;
+        overflow-y: scroll;
+        padding-bottom: 200px;
+        padding-top: 20px;
+    }
+    
+    .navbar {
+        border-bottom: 1px solid #eeeeee;
+        margin-left: -15px;
+        width: 100% ;
+    }
+    
+    .message {
+        min-height: 59px;
+        .content-container {
+        display: inline-block;
+        .content {
+            background-color: #67eb79;
+            padding: 8px 16px;
+            border-radius: 20px;
+        }
+        .author {
+            font-size: 0.8rem;
+            color: #777777;
+            margin-left: 10px;
+        }
+        }
+        &.me {
+        .content-container {
+            float: right;
+            .content {
+            background-color: #007bff;
+            color: white;
+            }
+        }
+        }
+    }}
+    
+    .chat-box {
+        background-color: transparent;
+        
+
+        .field{
+            padding: 5px 5px;
+            width: 535px;
+        }
+
+        .actions{
+            padding-left: 5px;
+        }
+
+        input[type=text] {
+            height: 45px;
+            font-size: 18px;
+            width: 80%;
+        }
+        .btn {
+            height: 45px;
+        }
+        }
+    
+
+    
+    .card.no-outline {
+        border: none;
+    }
+    
+    .room-link {
+        &:hover {
+        text-decoration: none;
+        }
+        .room-card {
+        transition: background-color 0.5s ease;
+        border-radius: 20px;
+        &:hover {
+            background-color: #eeeeee;
+        }
+        &.active {
+            background-color: black;
+            .name {
+            color: white;
+            }
+            .member-count {
+            color: #e0e0e0;
+            }
+        }
+        .name {
+            font-weight: bold;
+            color: black;
+        }
+        .member-count {
+            color: #777777;
+            font-weight: light;
+        }
+        }
+    }
+    
+    .rooms-sidebar {
+        border-right: 1px solid #eeeeee;
+    }
+
+    .card-add-form{
+        padding: 8px;
+    }
+
+.pic-frame{
+    .actions{
+        width: 190px;
+    }
+    
+        background-color: transparent;
+        width: 300px;
+    
+}
+    
+
+
+    
+
+    .hands{
+        position: absolute;
+        bottom: -425px;
+        left: 60px;
+        img{
+            width: 500px;
+        }
+        
+    }
+
+
+
+
+
+.shelf{
+    
+    
+            max-height: 463px;
+            position: absolute;
+            top:110px;
+            left:155px;
+            
+            border: 1px solid #ddd;
+            overflow-x: auto;   
+        
+        .slide-img{
+            width: 305px;
+            overflow-x: auto;
+        }
+
+        .slide-img img{
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            box-sizing: border-box;
+        }
+        .slide-img:hover img{
+            -webkit-filter: brightness(50%);
+            -webkit-transition: all 1s ease;
+            -moz-transition: all 1s ease;
+            -o-transition: all 1s ease;
+            -ms-transition: all 1s ease;
+            transition: all 1s ease;
+        }
+        
+        
+        a{
+            color: #241d1a !important;
+            text-align: center;
+            
+        }}
+
+.masthead{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    
+    
+}
+.masthead {
+    min-height: 200px;
+    position: relative;
+}
+.masthead img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    box-sizing: border-box;
+}
+
+.img-fluid{
+    height: 100px;
+    width: 1400px;
+}
+
+
+
+
+
+
+
+
+.row{
+    display: inline;
+    width: 1200px;
+    
+}
+
+
+.picture_book{
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: sans-serif;
+    background-color: powderblue;
+
+
+.cover{
+    position: relative;
+    width: 500px;
+    height: 532px;
+    transition: transform 0.5s;
+}
+
+.paper{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    perspective: 1500px;
+}
+
+.front, .back{
+    background-color: white;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    transform-origin: left;
+    transition: transform 0.5s;
+}
+.front{
+    z-index: 1;
+    backface-visibility: hidden;
+    border-left: 3px solid powderblue;
+}
+.back{
+    z-index: 0;
+}
+.front-content,
+.back-content{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.back-content{
+    transform: rotateY(180deg);
+}
+
+.flipped .front,
+.flipped .back{
+    transform: rotateY(-180deg);
+}
+
+button{
+    border: none;
+    background-color: transparent;
+    cursor: pointer;
+    margin: 10px;
+    transition: transform 0.5s;
+
+}
+
+button:focus{
+    outline: none;
+}
+
+button:hover{
+    color: #636363;
+}
+
+i{
+    font-size: 50px;
+    color: gray;
+}
+
+#p1{
+    z-index: 3;
+}
+
+#p2{
+    z-index: 2;
+}
+
+#p3{
+    z-index: 1;
+}
+}
+
+.bg-hand{
+    background-image: url(/assets/img/hands.jpg);
+    background-size: 1100px;
+    width: 1100px;
+    height: 588px;
+}
+
+.paper{
+    img{
+        width: 498px;
+        object-fit: cover;
+    }
+}

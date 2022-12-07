@@ -31,10 +31,8 @@
     <%= f.label :user %><br />
     <%= f.text_field :user %>
   </div>
-  <div class="field">
-    <%= f.label :book %><br />
-    <%= f.text_field :book %>
-  </div>
+  <%= f.hidden_field :book_id ,value: @todo_list.book_id %>
+
   <div class="actions">
     <%= f.submit %>
   </div>

@@ -11,16 +11,19 @@
     </div>
   <% end %>
 
+    <div class="field">
+      <%= text_field :name, class: 'form-control' %>
+    </div>
+
+    <div class="actions">
+      <%= submit_tag "Add book", class: "btn btn-success btn-block btn-sm" %>
+    </div>
+  
   <div class="field">
-  <%=form.label :image %>
   <%=form.file_field :image%>
   </div>
 
-  <div class="field">
-    <%= form.text_field :name, class: 'form-control' %>
-  </div>
-
-  <div class="actions">
-    <%= form.submit "Add book", class: "btn btn-primary btn-block" %>
-  </div>
+  
 <% end %>
+
+

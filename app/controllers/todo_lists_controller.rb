@@ -24,8 +24,7 @@ class TodoListsController < ApplicationController
   def create
     @todo_list = TodoList.new(todo_list_params)
     @todo_list.login_user_id= current_login_user.id
-    @todo_list.save
-    
+    @todo_list.save!
     redirect_to request.referrer
     
   end
@@ -61,6 +60,6 @@ class TodoListsController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def todo_list_params
-      params.require(:todo_list).permit(:title, :login_user_id, :book_id)
+      params.require(:todo_list).permit(:title, :login_user_id, :book_id, :description)
     end
 end

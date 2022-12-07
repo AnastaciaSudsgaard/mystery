@@ -12,12 +12,13 @@
   <% end %>
 
   <div class="field">
-    <%= form.label :title %>
+    
     <%= form.text_field :title %>
-  </div>
+    <%= form.hidden_field :book_id ,value: book.id %>
 
-    <%= form.hidden_field :book_id, value: book.id %>
 
+    
+</div>
   <div class="actions">
     <%= form.submit %>
   </div>

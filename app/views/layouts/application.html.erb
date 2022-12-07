@@ -1,22 +1,5 @@
 <!DOCTYPE html>
 <html>
-
-<div class="row justify-content-center">
-    <nav>
-        <ul>
-          <li><a href="#page-top">Home</a></li>
-          <li><%=link_to "Log out",destroy_login_user_session_path, method: :delete%> </li>
-          <li>
-              <% if login_user_signed_in? %>
-                  <%= link_to "My page", login_user_path(current_login_user.id) %>
-              <% end %><br>
-          </li>
-          <li><a href="#library">My library</a></li>
-        </ul>
-    </nav>
-</div>
-
-
   <head>
     <title>Mystery</title>
     <meta name="viewport" content="width=device-width,initial-scale=1">
@@ -25,11 +8,47 @@
 <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
 <script src="https://kit.fontawesome.com/2ec2a30cc1.js" crossorigin="anonymous"></script>
 
-    <%= stylesheet_pack_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
 
-  <body class='bg-light'> 
+
+<body class='bg-light'> 
+<nav>
+  <ul>
+    <li>
+      <a href="#" class="logo">
+        
+        <span class="nav-item">Mystery Memo</span>
+      </a>
+    </li>
+    <li><a href="#">
+      <i class="fas fa-home"></i>
+      <span class="nav-item">aaaaaaa</span>
+    </a></li>
+    
+    <li><a href="/books">
+      <i class='fas fa-book-open'></i>
+      <span class="nav-item">aaaaaaa</span>
+    </a></li>
+
+    <li><a href="/messages">
+      <i class="fas fa-comment"></i>
+      <span class="nav-item">aaaaaaa</span>
+    </a></li>
+
+<li><div class="logoutsign"><%=link_to destroy_login_user_session_path, method: :delete, class: 'btn' do%> 
+<i class='fas fa-sign-out-alt'></i>
+<span class="nav-item">aaaaaaa</span>
+<%end%>
+</div></li>
+          
+
+  </ul>
+</nav>
+
+
+
 <div class="container">
   <div class="row">
     

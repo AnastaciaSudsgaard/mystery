@@ -10,7 +10,17 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2022_10_31_160427) do
+ActiveRecord::Schema.define(version: 2022_11_14_105808) do
+
+  create_table "action_text_rich_texts", force: :cascade do |t|
+    t.string "name", null: false
+    t.text "body"
+    t.string "record_type", null: false
+    t.integer "record_id", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["record_type", "record_id", "name"], name: "index_action_text_rich_texts_uniqueness", unique: true
+  end
 
   create_table "active_storage_attachments", force: :cascade do |t|
     t.string "name", null: false
@@ -122,13 +132,13 @@ ActiveRecord::Schema.define(version: 2022_10_31_160427) do
     t.boolean "completed"
     t.datetime "completed_at"
     t.integer "todo_list_id", null: false
-    t.integer "user_id", null: false
+    t.integer "login_user_id", null: false
     t.integer "book_id", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.index ["book_id"], name: "index_todo_insides_on_book_id"
+    t.index ["login_user_id"], name: "index_todo_insides_on_login_user_id"
     t.index ["todo_list_id"], name: "index_todo_insides_on_todo_list_id"
-    t.index ["user_id"], name: "index_todo_insides_on_user_id"
   end
 
   create_table "todo_items", force: :cascade do |t|
@@ -167,8 +177,8 @@ ActiveRecord::Schema.define(version: 2022_10_31_160427) do
   add_foreign_key "todo_contents", "users"
   add_foreign_key "todo_ins", "todo_lists"
   add_foreign_key "todo_insides", "books"
+  add_foreign_key "todo_insides", "login_users"
   add_foreign_key "todo_insides", "todo_lists"
-  add_foreign_key "todo_insides", "users"
   add_foreign_key "todo_items", "todo_lists"
   add_foreign_key "todo_lists", "books"
   add_foreign_key "todo_lists", "login_users"

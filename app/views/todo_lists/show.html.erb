@@ -16,9 +16,17 @@
       <div class="progress-bar bg-info" role="progressbar" style="width: <%=@todo_list.percent_complete%>%" aria-valuenow="<%=@todo_list.percent_complete%>" aria-valuemin="0" aria-valuemax="100"></div>
   </div>
   
+
+
   <%= form_with(model: [@todo_list, @todo_inside]) do |f| %>
       <div class="input-group mb-4">
-        <%=f.text_field :description, class: 'form-control', placeholder: 'Add possible evidence'%>
+        <%= f.hidden_field :book_id ,value: @todo_list.book_id %>
+
+
+<div class="input-group">
+    <%= f.rich_text_area :description , placeholder: 'Add possible evidence'%>
+  </div>
+
         <div class="input-group-append">
           <%=f. submit "Add" ,class: "btn btn-primary input-group-btn"%>
         </div>
@@ -43,12 +51,12 @@
       </li>
     <% else %>
       <li class='list-group-item'>
-        <td><%= link_to 'Destroy', todo_list, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <%= todo_inside.description %>
+        <td><%= link_to 'Destroy', [todo_inside.todo_list, todo_inside], method: :delete, data: { confirm: 'Are you sure?' } %></td>
+
         <br>
           <div class="d-flex justify-content-between">
-            <span class='text-muted'>
-              <em><%= todo_inside.description %></em>
-            </span>
+            
             <%= link_to '#', class: 'btn btn-info' do%>
               <i class='fas fa-check'></i>
             <% end %>
@@ -61,11 +69,8 @@
 
 
     <% end%>
-    <p><strong>User:</strong>
-    <%= @todo_list.user_id %></p>
 
-    <p><strong>Book:</strong>
-    <%= @todo_list.book_id %></p>
+    
   </ul>
 </div>
 

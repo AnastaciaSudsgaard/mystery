@@ -5,7 +5,7 @@ class CreateTodoInsides < ActiveRecord::Migration[6.1]
       t.boolean :completed
       t.datetime :completed_at
       t.references :todo_list, null: false, foreign_key: true
-      t.references :user, null: false, foreign_key: true
+      t.references :login_user, null: false, foreign_key: true
       t.references :book, null: false, foreign_key: true
 
       t.timestamps

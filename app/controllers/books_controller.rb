@@ -1,5 +1,6 @@
 class BooksController < ApplicationController
   before_action :set_book, only: %i[ show edit update destroy ]
+  before_action :authenticate_login_user!
   
 
   # GET /books or /books.json
@@ -52,6 +53,7 @@ class BooksController < ApplicationController
 
   # DELETE /books/1 or /books/1.json
   def destroy
+    
     @book.destroy
 
     respond_to do |format|

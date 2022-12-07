@@ -1,0 +1,82 @@
+<head>
+<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<script src="https://code.jquery.com/jquery-3.4.1.js"></script>
+<script src="https://kit.fontawesome.com/b0f29e9bfe.js" crossorigin="anonymous"></script>
+</head>
+
+
+<body id="page-top">
+
+
+<div class="picture_book">
+        
+<!-- Previous Button-->
+        <button id="prev-btn">
+          <i class="fas fa-arrow-circle-left"></i>
+        </button>
+
+<!-- Book-->
+        <div id="cover" class="cover">
+<!-- Paper1-->
+        <div id="p1" class="paper">
+          <div class="front">
+            
+          </div>
+
+
+          <div class="back">
+            <div id="b1" class="back-content">
+              <%=image_tag 'img/welcome1.jpg'%>
+            </div>
+          </div>
+        </div>
+        <!-- Paper2-->
+        <div id="p2" class="paper">
+          <div class="front">
+            <div id="f2" class="front-content">
+              <%=image_tag 'img/welcome2.jpg'%>
+            </div>
+          </div>
+
+
+          <div class="back">
+            <div id="b2" class="back-content">
+              <%=image_tag 'img/face_mirror1.jpg'%>
+            </div>
+          </div>
+        </div>
+        <!-- Paper3-->
+        <div id="p3" class="paper">
+          <div class="front">
+            <div id="f3" class="front-content">
+              <%=image_tag 'img/face_mirror2.jpg'%>
+            </div>
+          </div>
+
+
+          <div class="back">
+            <div id="b3" class="back-content">
+              <h1>Back 3</h1>
+            </div>
+          </div>
+        </div>
+
+
+      </div>
+
+<!-- Next Button-->
+        <button id="next-btn">
+          <i class="fas fa-arrow-circle-right"></i>
+        </button>
+        
+<%= javascript_pack_tag 'main' %>
+
+
+
+
+
+        
+</div>
+
+
+</body>
